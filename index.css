@@ -1,0 +1,66 @@
+/* custom variable */
+:root {
+  --primary: orange;
+  --secondary: rgb(221, 122, 122);
+  --hover-primary: lightblue;
+  --hover-secondary: goldenrod;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--primary);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1 {
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+
+h1:hover {
+  color: white;
+  background-color: var(--secondary);
+}
+
+p::first-letter {
+  font-size: 50px;
+}
+
+main button {
+  width: 100px;
+  height: 30px;
+}
+
+main button:hover {
+  background-color: var(--hover-primary);
+  color: var(--hover-secondary);
+}
+
+.btn {
+  font-family: "Times New Roman", Times, serif;
+  border-radius: 2px;
+  border: 2px dotted black;
+}
+
+nav + button {
+  margin-bottom: 5px;
+}
+
+nav + button:hover {
+  background-color: var(--hover-secondary);
+}
+
+aside + div {
+  background-color: black;
+  height: 10px;
+  /* border-width: 2px;
+  border-style: solid;
+  border-color: white; */
+  border: 2px solid white;
+  outline: 4px solid rgba(0, 0, 0, 0.4);
+  margin: 2px;
+}

@@ -1,0 +1,41 @@
+Selektor Tunggal
+1. Element => element
+2. Class => .class
+3. Id => #id
+
+Selektor Keadaan Khusus => turunan dari selektor tunggal
+1. Pseudo Class => state/keadaan element
+selektor:pseudo-class
+ex. :hover, :active, :nth-child()
+
+2. Pseudo Element => sub-element/sebagian dari element
+selektor::pseudo-element
+ex. ::first-letter, ::first-line, ::before, ::after
+
+Selektor Majemuk => menyatukan beberapa selektor tunggal
+
+operator relasi selektor
+1. spasi => children of
+h1 p => elemen p yang merupakan children dari elemen h1
+<h1>
+    ..
+    <p></p> => elemen ini lah yg ditunjuk
+    ..
+</h1>
+
+2. > (greater than) => direct children of
+h1 > p => elemen p yang merupakan direct children dari elemen h1
+<h1>
+    <p></p> => elemen ini lah yg ditunjuk
+</h1>
+
+3. + => direct sibling of
+h1 + p => elemen p yang merupakan direct sibling dari elemen h1
+<h1></h1>
+<p></p>
+
+4. ~ (tilda) => next sibling of
+h1 ~ p => elemen p yang merupakan next sibling of h1
+<h1></h1>
+..
+<p></p>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Data</title>
+    <!-- Icon Link -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../../assets/icon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/icon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/icon/favicon-16x16.png" />
+    <link rel="manifest" href="./../assets/icon/site.webmanifest" />
+    <!-- Google Fonts Link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Phudu:wght@300..900&display=swap" rel="stylesheet" />
+    <!-- External CSS Link -->
+    <link rel="stylesheet" href="./add-data.css" />
+  </head>
+  <body>
+    <h1>FORM PENAMBAHAN DATA PENJUALAN</h1>
+    <form>
+      <div>
+        <label for="product">NAMA BARANG</label>
+        <br />
+        <input type="text" name="product" id="product" placeholder="Masukkan Nama Barang" />
+      </div>
+      <!-- <div>
+        <label for="hp">NOMOR HP</label>
+        <br />
+        <input type="text" name="hp" id="hp" placeholder="Masukkan Nomor HP" pattern="[0-9]{4,10}" />
+      </div> -->
+      <div>
+        <label for="qty">JUMLAH PENJUALAN</label>
+        <br />
+        <input type="number" name="quantity" id="qty" placeholder="Masukkan Jumlah Penjualan" min="0" />
+      </div>
+      <div>
+        <label for="month">BULAN PENJUALAN</label>
+        <br />
+        <select name="month" id="month">
+          <option value="0" disabled selected>MASUKKAN BULAN PENJUALAN</option>
+          <option value="1">January</option>
+          <option value="2">February</option>
+          <option value="3">March</option>
+          <option value="4">April</option>
+          <option value="5">May</option>
+          <option value="6">June</option>
+          <option value="7">July</option>
+          <option value="8">August</option>
+          <option value="9">September</option>
+          <option value="10">October</option>
+          <option value="11">November</option>
+          <option value="12">December</option>
+        </select>
+      </div>
+      <div>
+        <label for="note">KETERANGAN</label>
+        <br />
+        <textarea name="note" id="note" placeholder="Masukkan Keterangan Penjualan"></textarea>
+      </div>
+      <button type="button">SUBMIT</button>
+    </form>
+  </body>
+</html>

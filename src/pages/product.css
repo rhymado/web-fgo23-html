@@ -59,3 +59,10 @@ thead > tr > th:not(:first-child) {
 .col-even {
   background-color: lightpink;
 }
+
+a button {
+  width: 100%;
+  cursor: pointer;
+  user-select: none;
+  padding: 5px;
+}

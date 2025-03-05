@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event</title>
+    <!-- Icon Link -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../../assets/icon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/icon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/icon/favicon-16x16.png" />
+    <link rel="manifest" href="../../assets/icon/site.webmanifest" />
+    <!-- Google Fonts Link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Phudu:wght@300..900&display=swap" rel="stylesheet" />
+    <!-- External CSS Link -->
+    <link rel="stylesheet" href="../styles/event.css" />
+    <!-- External Script -->
+    <script src="../js/event.js" defer></script>
+  </head>
+  <body>
+    <!-- body -->
+    <main>
+      <!-- main -->
+      <section>
+        <!-- section -->
+        <div>
+          <!-- div -->
+          <p data-size="24">Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, tempora!</p>
+          <button type="button" onclick="changeFontSize(-1)">Decrease font by 1px</button>
+          <button type="button" onclick="changeFontSize(1)">Increase font by 1px</button>
+          <br />
+          <p style="font-size: 0.7em">Listener</p>
+          <button type="button">Decrease font by 1px</button>
+          <button type="button">Increase font by 1px</button>
+        </div>
+      </section>
+      <section>
+        <form>
+          <h2>LOGIN FORM</h2>
+          <div>
+            <label for="email">Email</label>
+            <input type="text" name="email" id="email" placeholder="Insert your email" />
+          </div>
+          <div>
+            <label for="pwd">Password</label>
+            <input type="password" name="password" id="pwd" placeholder="Insert your password" />
+          </div>
+          <div>
+            <input type="radio" name="gender" id="male" value="male" /> <label for="male">Male</label>
+            <input type="radio" name="gender" id="female" value="female" /> <label for="female">Female</label>
+          </div>
+          <div>
+            <label for="domisili">Domisili</label>
+            <select name="domisili" id="domisili">
+              <option value="" selected hidden>Choose your city</option>
+              <option value="tegal">Tegal</option>
+              <option value="bogor">Bogor</option>
+              <option value="padang">Padang</option>
+            </select>
+          </div>
+          <button type="submit">LOGIN</button>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>

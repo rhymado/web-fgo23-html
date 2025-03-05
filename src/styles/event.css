@@ -1,0 +1,52 @@
+* {
+  box-sizing: border-box;
+  font-family: "Phudu", serif;
+  padding: 0;
+  font-size: 20px;
+  /* 1rem = 20px */
+}
+
+div {
+  font-size: 24px;
+  /* 1rem = 20px */
+  /* 1em = 24px */
+}
+
+button {
+  padding: 5px;
+  cursor: pointer;
+  user-select: none;
+}
+
+section {
+  padding: 5px;
+}
+
+form,
+form > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+input {
+  padding: 5px;
+  border-radius: 4px;
+}
+
+input::-ms-clear,
+input::-ms-reveal {
+  display: none;
+}
+
+input {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+form > div:nth-of-type(3) {
+  display: block;
+}
+
+label {
+  user-select: none;
+}

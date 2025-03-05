@@ -1,0 +1,118 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: "Phudu", serif;
+  background-color: lightsteelblue;
+  padding: 10px;
+}
+
+.box {
+  background: lightseagreen;
+  margin: 5px;
+  padding: 5px;
+  text-align: center;
+  border-radius: 5px;
+  border: 2px solid black;
+  height: 100px;
+}
+
+section .container {
+  background-color: antiquewhite;
+  border: 2px solid black;
+  padding: 5px;
+  border-radius: 5px;
+  height: 200px;
+}
+
+main section:nth-of-type(1) .container {
+  display: flex;
+  /* flex-wrap: wrap; */
+  align-items: baseline;
+  justify-content: space-evenly;
+  font-size: 1rem;
+}
+main section:nth-of-type(1) .container .box:nth-child(1) {
+  font-size: 2rem;
+}
+main section:nth-of-type(1) .container .box:nth-child(3) {
+  font-size: 1.5rem;
+}
+/* flex: grow shrink basis */
+/* main section:nth-of-type(1) .container .box:nth-child(1) {
+  flex: 0 0 200px;
+}
+main section:nth-of-type(1) .container .box:nth-child(2) {
+  flex: 1 1 200px;
+}
+main section:nth-of-type(1) .container .box:nth-child(3) {
+  flex: 1 1 200px;
+} */
+
+main section:nth-of-type(2) .container {
+  display: grid;
+  grid-template-rows: 120px 40px 120px 120px 40px 120px;
+  height: auto;
+  grid-template-areas:
+    "a"
+    "b"
+    "b"
+    "c"
+    "c"
+    "d";
+  gap: 5px;
+}
+
+main section:nth-of-type(2) .container .box {
+  height: auto;
+  margin: 0;
+}
+main section:nth-of-type(2) .container .box:nth-child(1) {
+  grid-area: a;
+  border-radius: 15px 15px 0 0;
+}
+main section:nth-of-type(2) .container .box:nth-child(2) {
+  grid-area: b;
+  border-radius: 15px 15px 0 0;
+}
+main section:nth-of-type(2) .container .box:nth-child(3) {
+  grid-area: c;
+  border-radius: 0 0 15px 15px;
+}
+main section:nth-of-type(2) .container .box:nth-child(4) {
+  grid-area: d;
+  border-radius: 0 0 15px 15px;
+}
+
+main section:nth-of-type(2) .container .box:nth-child(odd):hover {
+  animation: spin 1s infinite linear;
+}
+main section:nth-of-type(2) .container .box:nth-child(even):hover {
+  animation: spin 1s infinite linear reverse;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* if width >= 480px => min-width: 480px */
+/* if width <= 480px =? max-width: 480px */
+@media screen and (min-width: 480px) {
+  .box {
+    background: lightcoral;
+  }
+  main section:nth-of-type(2) .container {
+    grid-template-columns: 150px 150px;
+    grid-template-rows: 120px 40px 120px;
+    grid-template-areas:
+      "a b"
+      "c b"
+      "c d";
+    gap: 5px;
+    height: 500px;
+  }
+}

@@ -34,14 +34,22 @@ function onSubmitHandler(event) {
   const gender = event.target.gender.value;
   const domisili = event.target.domisili.value;
   //   validasi
+  let error = 0;
   if (!validateInput(email, "email")) {
-    console.log("Email Salah Format");
-    return;
+    // console.log("Email Salah Format");
+    // emailWrapper.dispatchEvent(new CustomEvent("error", { detail: { message: "Email Salah Format" } }));
+    emailWrapper.dispatchEvent(new Event("error"));
+    // return;
+    error++;
   }
   if (!validateInput(password, "password")) {
-    console.log("Password Minimum 6 Karater");
-    return;
+    // console.log("Password Minimum 6 Karater");
+    // passwordWrapper.dispatchEvent(new CustomEvent("error", { detail: { message: "Password Minimum 6 Karakter" } }));
+    passwordWrapper.dispatchEvent(new Event("error"));
+    // return;
+    error++;
   }
+  if (error > 0) return;
   //  JSON
   const bodyJSON = {
     email,
@@ -49,7 +57,7 @@ function onSubmitHandler(event) {
     gender,
     domisili,
   };
-  console.log(bodyJSON);
+  console.log(JSON.stringify(bodyJSON));
   //   formdata
   const formData = new FormData();
   formData.append("email", email);
@@ -59,7 +67,38 @@ function onSubmitHandler(event) {
   formData.forEach((value, key) => {
     console.log(`${key}: ${value}`);
   });
+  // url encoded
+  const bodyUrl = new URLSearchParams({
+    email,
+    password,
+    gender,
+    domisili,
+  });
+  console.log(bodyUrl.toString());
+  // menggunakan input element secara manual
+  const inputs = event.target.querySelectorAll("input");
+  const selects = event.target.querySelectorAll("select");
+  // tangani input
+  const bodyManual = {};
+  for (const input of inputs) {
+    if (input.type === "radio") {
+      if (input.checked) Object.assign(bodyManual, { [input.name]: input.value });
+      continue;
+    }
+    Object.assign(bodyManual, { [input.name]: input.value });
+  }
+  for (const select of selects) {
+    Object.assign(bodyManual, { [select.name]: select.value });
+  }
+  const url = [];
+  for (const key in bodyManual) {
+    const encodedKey = encodeURIComponent(key);
+    const encodedValue = encodeURIComponent(bodyManual[key]);
+    url.push(`${encodedKey}=${encodedValue}`);
+  }
+  console.log(url.join("&"));
 }
+
 function validateInput(value, type) {
   // empty validation
   if (value.length == 0) {
@@ -85,3 +124,30 @@ function validateInput(value, type) {
   }
   return true;
 }
+
+// create event
+// const errorEvent = new Event("error");
+
+const emailWrapper = document.querySelector("form div:nth-of-type(1)");
+const passwordWrapper = document.querySelector("form div:nth-of-type(2)");
+
+emailWrapper.addEventListener("error", function (event) {
+  // const p = document.createElement("p");
+  // p.textContent = event.detail.message;
+  // p.style.color = "red";
+  // p.style.margin = 0;
+  // p.style.fontStyle = "italic";
+  // p.style.fontSize = ".6rem";
+  // this.append(p);
+  this.querySelector("p").style.visibility = "visible";
+});
+passwordWrapper.addEventListener("error", function (event) {
+  // const p = document.createElement("p");
+  // p.textContent = event.detail.message;
+  // p.style.color = "red";
+  // p.style.margin = 0;
+  // p.style.fontStyle = "italic";
+  // p.style.fontSize = ".6rem";
+  // this.append(p);
+  this.querySelector("p").style.visibility = "visible";
+});

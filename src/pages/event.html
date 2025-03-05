@@ -41,12 +41,16 @@
           <div>
             <label for="email">Email</label>
             <input type="text" name="email" id="email" placeholder="Insert your email" />
+            <p>Email Salah Format</p>
           </div>
           <div>
             <label for="pwd">Password</label>
             <input type="password" name="password" id="pwd" placeholder="Insert your password" />
+            <p>Password Minimum 6 Karakter</p>
           </div>
           <div>
+            <label>Gender</label>
+            <br />
             <input type="radio" name="gender" id="male" value="male" /> <label for="male">Male</label>
             <input type="radio" name="gender" id="female" value="female" /> <label for="female">Female</label>
           </div>
@@ -58,6 +62,27 @@
               <option value="bogor">Bogor</option>
               <option value="padang">Padang</option>
             </select>
+          </div>
+          <div>
+            <label>Interest</label>
+            <div class="checkbox">
+              <div>
+                <input type="checkbox" name="music" id="music" />
+                <label for="music">Music</label>
+              </div>
+              <div>
+                <input type="checkbox" name="coding" id="coding" />
+                <label for="coding">Coding</label>
+              </div>
+              <div>
+                <input type="checkbox" name="sport" id="sport" />
+                <label for="sport">Sport</label>
+              </div>
+              <div>
+                <input type="checkbox" name="food" id="food" />
+                <label for="food">Food</label>
+              </div>
+            </div>
           </div>
           <button type="submit">LOGIN</button>
         </form>

@@ -50,3 +50,23 @@ form > div:nth-of-type(3) {
 label {
   user-select: none;
 }
+
+form .checkbox {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.checkbox label {
+  margin-left: 5px;
+}
+
+form div:nth-of-type(1) p:last-child,
+form div:nth-of-type(2) p:last-child {
+  /* display: none; */
+  visibility: hidden;
+  margin: 0;
+  font-style: italic;
+  font-size: 0.7em;
+  color: red;
+}

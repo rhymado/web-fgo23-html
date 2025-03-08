@@ -17,11 +17,14 @@ header {
   background: lightblue;
 }
 
+button {
+  cursor: pointer;
+  user-select: none;
+}
+
 header button {
   display: flex;
   padding: 0;
-  cursor: pointer;
-  user-select: none;
 }
 
 header button p {
@@ -40,4 +43,102 @@ header button p:first-child {
   grid-template-columns: repeat(5, minmax(100px, 1fr));
   padding: 10px 100px;
   grid-auto-rows: 200px;
+  /* grid-auto-columns: minmax(100px, 1fr); */
+  gap: 5px;
+}
+
+.card {
+  border: 2px solid black;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.card:hover {
+  box-shadow: 0 0 5px black;
+  /* outline: 3px solid black; */
+  /* transform: scale(1.1); */
+}
+
+.card .title {
+  font-size: 1.3rem;
+  border-bottom: 1px solid black;
+  padding-bottom: 10px;
+  height: 34px;
+}
+
+.card .title p {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.card .body {
+  padding-top: 10px;
+  flex: 1;
+  font-size: 0.8rem;
+  overflow: hidden;
+}
+
+/* .card:last-of-type {
+  grid-column: 6 / 7;
+  grid-row: 3 / 4;
+} */
+
+.modal-wrapper {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 2;
+  display: none;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 60%;
+  width: 60%;
+  background-color: blanchedalmond;
+  border-radius: 5%;
+  padding: 10px;
+}
+
+.modal form {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 0.5rem;
+}
+
+.modal form h2 {
+  text-align: center;
+}
+
+.modal form input,
+.modal form textarea {
+  padding: 5px;
+  font-family: "Iansui", cursive;
+}
+
+.modal form textarea {
+  resize: none;
+  flex: 1;
+}
+
+.modal form button {
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.modal .close {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 2rem;
 }
